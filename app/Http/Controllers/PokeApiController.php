@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 
 class PokeApiController extends Controller
 {
-    public function Pokemons(){
+
+
+    public function Index(){
+        $this->Pokemons(0);
+    }
+
+    public function Pokemons($id){
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0",
+            CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon?limit=20&offset=".$id*20,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
