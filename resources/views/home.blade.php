@@ -12,7 +12,7 @@
                 <h2>All Pokémons</h2>
                 <div class="pokemons">
                     @foreach ($pokemons as $pokemon)
-                        <div class="pokemon" data-id="{{$pokemon->id}}">
+                        <div class="pokemon" data-name="{{$pokemon->name}}">
                             <img src="{{ $pokemon->sprites->front_default }}" alt="{{ $pokemon->name }}">
                             <p>N°{{$pokemon->id}} : {{ $pokemon->name }}</p>
                         </div>

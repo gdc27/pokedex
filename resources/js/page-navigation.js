@@ -1,8 +1,8 @@
 const $ = require( "jquery" );
 
 $('.pokemon').click(function(){
-   let id = $(this).data('id');
-    window.location.href = "/pokemon/"+id;
+   let name = $(this).data('name');
+    window.location.href = "/pokemon/"+name;
 });
 
 $('.next').click(function(){

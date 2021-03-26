@@ -78,7 +78,14 @@ class PokeApiController extends Controller
 
     public function Pokemon($id){
         $id = strtolower($id);
-        $PokeInfo = $this->PokemonInfo('https://pokeapi.co/api/v2/pokemon/'.$id);
-        dd($PokeInfo);
+        $pokeInfo = $this->PokemonInfo('https://pokeapi.co/api/v2/pokemon/'.$id);
+        if($pokeInfo== null) {
+            header("Location: /");
+            exit;
+        }else{
+            //dd($pokeInfo);
+            return view('pokemon',['pokemon' => $pokeInfo]);
+        }
+
     }
 }

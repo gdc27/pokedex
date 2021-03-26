@@ -195,6 +195,52 @@ a:visited {
   font-size: 1.4em;
 }
 
+.poke_wrap {
+  border: 4px solid black;
+  border-radius: 10px;
+  width: 100%;
+}
+.poke_wrap > div:first-child {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /*background-image: url('../../images/bg.png');
+  background-size:100%;
+  background-repeat: no-repeat;*/
+}
+.poke_wrap > div:first-child img:first-of-type, .poke_wrap > div:first-child img:last-of-type {
+  width: 30%;
+  position: absolute;
+}
+.poke_wrap > div:first-child img:nth-of-type(2) {
+  width: 100%;
+  border-radius: 8px;
+}
+.poke_wrap > div:first-child i {
+  position: absolute;
+  font-size: 1.5em;
+  top: 2%;
+}
+.poke_wrap > div:first-child i:hover {
+  cursor: pointer;
+}
+.poke_wrap > div:first-child i:first-of-type {
+  right: 2%;
+}
+.poke_wrap > div:first-child i:last-of-type {
+  right: 7%;
+}
+.poke_wrap > div:first-child img:first-of-type {
+  top: 0;
+  right: 0;
+  transform-origin: center;
+  transform: translate(-30%, 10%);
+}
+.poke_wrap > div:first-child img:last-of-type {
+  bottom: 0;
+  left: 2%;
+}
+
 header {
   width: 100%;
   margin-top: 1%;

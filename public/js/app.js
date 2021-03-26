@@ -1844,6 +1844,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./page-navigation */ "./resources/js/page-navigation.js");
 
+__webpack_require__(/*! ./pokemon */ "./resources/js/pokemon.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -1886,8 +1888,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 $('.pokemon').click(function () {
-  var id = $(this).data('id');
-  window.location.href = "/pokemon/" + id;
+  var name = $(this).data('name');
+  window.location.href = "/pokemon/" + name;
 });
 $('.next').click(function () {
   var id = $('.page_nb').html();
@@ -1911,6 +1913,23 @@ $('.input_box>i').click(function () {
   if (name) {
     window.location.href = "/pokemon/" + name;
   }
+});
+
+/***/ }),
+
+/***/ "./resources/js/pokemon.js":
+/*!*********************************!*\
+  !*** ./resources/js/pokemon.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$('.rotate').click(function () {
+  var pokemon = $('.pokemon-sprite');
+  var mem = pokemon.attr('src');
+  pokemon.attr('src', pokemon.data('back'));
+  pokemon.data('back', mem);
 });
 
 /***/ }),
