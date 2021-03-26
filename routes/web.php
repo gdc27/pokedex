@@ -19,14 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test/',function(){
-    return view('test');
-});
+Route::get('/',[PokeApiController::class,'Pokemons']);
+Route::get('/{id}',[PokeApiController::class,'Pokemons']);
 
-
-
-Route::get('/pokemons/',[PokeApiController::class,'Index']);
-Route::get('/pokemons/{id}',[PokeApiController::class,'Pokemons']);
-
-Route::get('/pokemon/{name}',[PokeApiController::class,'Pokemon']);
+Route::get('/pokemon/{id}',[PokeApiController::class,'Pokemon']);
 

@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background:#fefff2;
+    margin-bottom:2%;
+}
+h2{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    font-weight:600;
+}
+a{
+    text-decoration: underline;
+    font-weight: 600;
+    color:black;
+    &:hover{
+        color:#2e2e2e;
+    }
+    &:visited{
+        color:black;
+    }
+}
+
+
+/*----------------------------------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #fefff2;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 20px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:active {
+    background: #2e2e2e;
+}
+
+::selection {
+    color: #F9F4EA;
+    background: #2D2C2C;
+}
+
+::-moz-selection {
+    color: #F9F4EA;
+    background: #2D2C2C;
+}
+

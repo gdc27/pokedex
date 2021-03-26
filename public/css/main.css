@@ -1,3 +1,227 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=DotGothic16&display=swap);
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
 body {
-  background: red;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Config*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background: #fefff2;
+  margin-bottom: 2%;
+}
+
+h2 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: black;
+}
+a:hover {
+  color: #2e2e2e;
+}
+a:visited {
+  color: black;
+}
+
+/*----------------------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fefff2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:active {
+  background: #2e2e2e;
+}
+
+::-moz-selection {
+  color: #F9F4EA;
+  background: #2D2C2C;
+}
+
+::selection {
+  color: #F9F4EA;
+  background: #2D2C2C;
+}
+
+::-moz-selection {
+  color: #F9F4EA;
+  background: #2D2C2C;
+}
+
+/*Layout*/
+.wrap {
+  width: 50%;
+  margin: auto;
+}
+
+.search {
+  margin: 7% auto;
+}
+.search h2 {
+  margin-bottom: 3%;
+}
+.search .input_box {
+  position: relative;
+  width: 70%;
+}
+.search .input_box input {
+  border: none;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid black;
+  margin-bottom: -3px;
+  font-size: 0.9em;
+  padding: 10px;
+  transition: all 100ms ease-in-out;
+}
+.search .input_box input:focus {
+  outline: none;
+  border-bottom: 4px solid black;
+}
+.search .input_box i {
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.2em;
+  right: 1%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokemons {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 25px 25px;
+}
+.pokemons .pokemon {
+  cursor: pointer;
+  font-size: 1.2em;
+  text-align: center;
+}
+.pokemons .pokemon img {
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+.pokemons .pokemon p {
+  font-family: "DotGothic16", sans-serif;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.navigation i {
+  margin: 0 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.navigation i:hover {
+  color: gray;
+}
+.navigation p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.4em;
+}
+
+header {
+  width: 100%;
+  margin-top: 1%;
+  font-family: "Quicksand", sans-serif;
+}
+header > div {
+  display: flex;
+  justify-content: center;
+}
+header > div > h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 1%;
+  font-family: "Quicksand", sans-serif;
+}
+footer > div {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer > div > p {
+  font-weight: 400;
+  font-size: 1em;
 }

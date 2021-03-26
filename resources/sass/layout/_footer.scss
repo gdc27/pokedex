@@ -1,0 +1,17 @@
+footer {
+    position:fixed;
+    width:100%;
+    bottom:1%;
+    font-family: 'Quicksand', sans-serif;
+    & > div{
+        width:95%;
+        margin:auto;
+        display:flex;
+        justify-content:space-between;
+
+        >p{
+            font-weight: 400;
+            font-size:1em;
+        }
+    }
+}

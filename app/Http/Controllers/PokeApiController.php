@@ -12,11 +12,12 @@ class PokeApiController extends Controller
         $this->Pokemons(0);
     }
 
-    public function Pokemons($id){
+    public function Pokemons($id=0){
+        $pokemons= array();
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon?limit=20&offset=".$id*20,
+            CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon?limit=9&offset=".$id*9,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -36,15 +37,22 @@ class PokeApiController extends Controller
             echo "cURL Error #:" . $err;
         } else {
             $response = json_decode($response);
-            dd($response);
+            //dd($response);
+            foreach ($response->results as $result){
+                //$myJson = $this->Pokemon($result->url);
+                array_push($pokemons, $this->PokemonInfo($result->url));
+            }
+
+            return view('home',['pokemons' => $pokemons,'id' => $id]);
+
         }
     }
 
-    public function Pokemon($name){
+    public function PokemonInfo($link){
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon/".$name,
+            CURLOPT_URL => $link,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -64,7 +72,13 @@ class PokeApiController extends Controller
             echo "cURL Error #:" . $err;
         } else {
             $response = json_decode($response);
-            dd($response);
+            return $response;
         }
+    }
+
+    public function Pokemon($id){
+        $id = strtolower($id);
+        $PokeInfo = $this->PokemonInfo('https://pokeapi.co/api/v2/pokemon/'.$id);
+        dd($PokeInfo);
     }
 }
