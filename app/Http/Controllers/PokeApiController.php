@@ -12,6 +12,7 @@ class PokeApiController extends Controller
         $this->Pokemons(0);
     }
 
+    /* Function that calls the PokeApi to get 9 pokemons. Uses an offset coefficient as parametre */
     public function Pokemons($id=0){
         $pokemons= array();
         $curl = curl_init();
@@ -43,11 +44,12 @@ class PokeApiController extends Controller
                 array_push($pokemons, $this->PokemonInfo($result->url));
             }
 
-            return view('home',['pokemons' => $pokemons,'id' => $id]);
+            return view('home',['pokemons' => $pokemons,'id' => $id]); // get the home view with the pokemons' array
 
         }
     }
 
+    /* Function to call the PokeAPi and get all the information about a pokemon and return the result. Needs the the Api request as parameter */
     public function PokemonInfo($link){
         $curl = curl_init();
 
@@ -76,15 +78,15 @@ class PokeApiController extends Controller
         }
     }
 
+    /* Function that calls the pokemon Info fonction and displays the pokemon view with the pokemon Info*/
     public function Pokemon($id){
         $id = strtolower($id);
         $pokeInfo = $this->PokemonInfo('https://pokeapi.co/api/v2/pokemon/'.$id);
         if($pokeInfo== null) {
-            header("Location: /");
+            header("Location: /?result=0");
             exit;
         }else{
-            //dd($pokeInfo);
-            return view('pokemon',['pokemon' => $pokeInfo]);
+            return view('pokemon',['pokemon' => $pokeInfo]); // get the pokemon view with the pokemon information
         }
 
     }

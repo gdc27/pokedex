@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="author" content="Gabriel DA COSTA">
+    <link rel="icon" href="{{ asset('/images/favicon.ico') }}" />
     <title>Pokédex</title>
 
     <!-- Font-Awesome -->
@@ -25,8 +26,8 @@
 </div>
 <footer>
     <div>
-        <p>Made by Gabriel DC.</p>
-        <p>Powered by <a href="https://pokeapi.co/">PokeAPi</a></p>
+        <p>Made by <a href="https://mmi.univ-savoie.fr/~maiadacg/portfolio/" target="_blank">Gabriel DC.</a></p>
+        <p>Powered by <a href="https://pokeapi.co/" target="_blank">PokeAPi</a></p>
     </div>
 </footer>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>

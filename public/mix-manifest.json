@@ -1,7 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/main.css": "/css/main.css",
-    "/images/trainer.png": "/images/trainer.png",
     "/images/bg.png": "/images/bg.png",
-    "/images/rotate.png": "/images/rotate.png"
+    "/images/favicon.ico": "/images/favicon.ico",
+    "/images/rotate.png": "/images/rotate.png",
+    "/images/trainer.png": "/images/trainer.png"
 }

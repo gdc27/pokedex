@@ -1,3 +1,4 @@
+/*Global style for every page */
 *{
     margin:0;
     padding:0;
@@ -9,6 +10,12 @@ body{
     background:#fefff2;
     margin-bottom:2%;
 }
+
+.wrap{
+    width:50%;
+    margin:auto;
+}
+
 h2{
     font-family: 'Quicksand', sans-serif;
     font-size: 2em;
@@ -65,3 +72,8 @@ a{
     background: #2D2C2C;
 }
 
+@media (max-width: 800px) {
+    .wrap {
+        width:95%;
+    }
+}

@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',[PokeApiController::class,'Pokemons']);
+Route::get('/',[PokeApiController::class,'Pokemons'])->name('poke.home');
 Route::get('/{id}',[PokeApiController::class,'Pokemons']);
 
 Route::get('/pokemon/{id}',[PokeApiController::class,'Pokemon']);

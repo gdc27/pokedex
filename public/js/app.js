@@ -1886,11 +1886,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* Event to go to the pokemon page when a pokemon is clicked */
+
 
 $('.pokemon').click(function () {
   var name = $(this).data('name');
   window.location.href = "/pokemon/" + name;
 });
+/* Navigation buttons */
+
+/* Moves to the next page when the next button is clicked */
+
 $('.next').click(function () {
   var id = $('.page_nb').html();
 
@@ -1899,6 +1905,8 @@ $('.next').click(function () {
     window.location.href = "/" + id;
   }
 });
+/* Moves to the previous page when the prev button is clicked */
+
 $('.prev').click(function () {
   var id = $('.page_nb').html();
 
@@ -1907,6 +1915,8 @@ $('.prev').click(function () {
     window.location.href = "/" + id;
   }
 });
+/* Event on the search button that goes to the pokemon page if the search bar contains something*/
+
 $('.input_box>i').click(function () {
   var name = $('input[name="input-search"]').val();
 
@@ -1924,12 +1934,57 @@ $('.input_box>i').click(function () {
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* Event to rotate the pokemon sprite depending on his shiny state*/
+
 
 $('.rotate').click(function () {
   var pokemon = $('.pokemon-sprite');
-  var mem = pokemon.attr('src');
-  pokemon.attr('src', pokemon.data('back'));
-  pokemon.data('back', mem);
+
+  if (pokemon.data('shiny-state') == 'no') {
+    if (pokemon.data('view') == 'front') {
+      pokemon.attr('src', pokemon.data('back'));
+      pokemon.data('view', 'back');
+    } else {
+      pokemon.attr('src', pokemon.data('front'));
+      pokemon.data('view', 'front');
+    }
+  } else {
+    if (pokemon.data('view') == 'front') {
+      pokemon.attr('src', pokemon.data('shiny-back'));
+      pokemon.data('view', 'back');
+    } else {
+      pokemon.attr('src', pokemon.data('shiny-front'));
+      pokemon.data('view', 'front');
+    }
+  }
+});
+/* Event to switch between shiny and normal mode */
+
+$('.shiny').click(function () {
+  var pokemon = $('.pokemon-sprite');
+
+  if (pokemon.data('shiny-state') == 'no') {
+    if (pokemon.data('view') == 'front') {
+      pokemon.attr('src', pokemon.data('shiny-front'));
+      pokemon.data('shiny-state', 'yes');
+    } else {
+      pokemon.attr('src', pokemon.data('shiny-back'));
+      pokemon.data('shiny-state', 'yes');
+    }
+  } else {
+    if (pokemon.data('view') == 'front') {
+      pokemon.attr('src', pokemon.data('front'));
+      pokemon.data('shiny-state', 'no');
+    } else {
+      pokemon.attr('src', pokemon.data('back'));
+      pokemon.data('shiny-state', 'no');
+    }
+  }
+});
+/* Event to add a class to a capacity make an arrow appear */
+
+$('div.capacities > p').hover(function () {
+  $(this).toggleClass('current');
 });
 
 /***/ }),

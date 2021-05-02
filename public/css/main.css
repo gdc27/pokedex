@@ -49,7 +49,10 @@ table {
     border-spacing: 0;
 }
 
+@charset "UTF-8";
 /*Config*/
+/* fonts' import */
+/*Global style for every page */
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +63,11 @@ table {
 body {
   background: #fefff2;
   margin-bottom: 2%;
+}
+
+.wrap {
+  width: 50%;
+  margin: auto;
 }
 
 h2 {
@@ -116,12 +124,13 @@ a:visited {
   background: #2D2C2C;
 }
 
-/*Layout*/
-.wrap {
-  width: 50%;
-  margin: auto;
+@media (max-width: 800px) {
+  .wrap {
+    width: 95%;
+  }
 }
-
+/*Layout*/
+/* Style for the Homepage */
 .search {
   margin: 7% auto;
 }
@@ -153,6 +162,11 @@ a:visited {
   right: 1%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.search .error-msg {
+  margin: 2% 0;
+  color: red;
+  font-size: 1.1em;
 }
 
 .pokemons {
@@ -195,10 +209,19 @@ a:visited {
   font-size: 1.4em;
 }
 
+/* Style for the single pokemon page*/
+.home-button {
+  position: absolute;
+  font-size: 2em;
+  top: 4%;
+  left: 4%;
+}
+
 .poke_wrap {
   border: 4px solid black;
   border-radius: 10px;
   width: 100%;
+  overflow: hidden;
 }
 .poke_wrap > div:first-child {
   display: flex;
@@ -214,7 +237,6 @@ a:visited {
 }
 .poke_wrap > div:first-child img:nth-of-type(2) {
   width: 100%;
-  border-radius: 8px;
 }
 .poke_wrap > div:first-child i {
   position: absolute;
@@ -228,7 +250,7 @@ a:visited {
   right: 2%;
 }
 .poke_wrap > div:first-child i:last-of-type {
-  right: 7%;
+  right: 9%;
 }
 .poke_wrap > div:first-child img:first-of-type {
   top: 0;
@@ -240,7 +262,47 @@ a:visited {
   bottom: 0;
   left: 2%;
 }
+.poke_wrap > div:nth-child(2) div.capacities_wrap {
+  border-top: 4px solid black;
+}
+.poke_wrap > div:nth-child(2) div.capacities_wrap h2 {
+  font-size: 1.5em;
+  margin: 2% 0 0 3%;
+}
+.poke_wrap > div:nth-child(2) div.capacities_wrap > div.capacities {
+  display: flex;
+  flex-wrap: wrap;
+}
+.poke_wrap > div:nth-child(2) div.capacities_wrap > div.capacities > p {
+  width: 50%;
+  text-align: left;
+  padding: 3% 1% 3% 4%;
+  font-size: 20px;
+  text-transform: capitalize;
+  position: relative;
+}
+.poke_wrap > div:nth-child(2) div.capacities_wrap > div.capacities > p.current::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  display: inline-block;
+  font-weight: 900;
+  margin-right: 2%;
+  position: absolute;
+  left: 4%;
+}
 
+@media (max-width: 800px) {
+  .home-button {
+    position: relative;
+    margin: 4% 0;
+  }
+
+  .poke_wrap > div:first-child i:last-of-type {
+    right: auto;
+    left: 2%;
+  }
+}
+/* Style for the header */
 header {
   width: 100%;
   margin-top: 1%;
@@ -255,6 +317,7 @@ header > div > h1 {
   font-weight: 600;
 }
 
+/* Style for the footer */
 footer {
   position: fixed;
   width: 100%;

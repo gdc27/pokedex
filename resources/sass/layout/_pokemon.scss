@@ -1,51 +1,115 @@
-.poke_wrap{
+/* Style for the single pokemon page*/
+.home-button {
+    position: absolute;
+    font-size: 2em;
+    top: 4%;
+    left: 4%;
+}
+
+.poke_wrap {
     border: 4px solid black;
     border-radius: 10px;
-    width:100%;
+    width: 100%;
+    overflow: hidden;
 
-    > div:first-child{
-        display:flex;
+    > div:first-child {
+        display: flex;
         flex-direction: column;
-        position:relative;
+        position: relative;
         /*background-image: url('../../images/bg.png');
         background-size:100%;
         background-repeat: no-repeat;*/
 
         img:first-of-type, img:last-of-type {
-            width:30%;
-            position:absolute;
+            width: 30%;
+            position: absolute;
         }
 
-        img:nth-of-type(2){
-            width:100%;
-            border-radius: 8px;
+        img:nth-of-type(2) {
+            width: 100%;
         }
-        i{
-            position:absolute;
+
+        i {
+            position: absolute;
             font-size: 1.5em;
-            top:2%;
-            &:hover{
-                cursor:pointer;
+            top: 2%;
+
+            &:hover {
+                cursor: pointer;
             }
         }
-        i:first-of-type{
+
+        i:first-of-type {
             right: 2%;
         }
-        i:last-of-type{
-            right: 7%;
+
+        i:last-of-type {
+            right: 9%;
         }
 
 
-        img:first-of-type{
+        img:first-of-type {
             top: 0;
             right: 0;
             transform-origin: center;
-            transform: translate(-30%,10%);
+            transform: translate(-30%, 10%);
         }
 
-        img:last-of-type{
-            bottom:0;
-            left:2%;
+        img:last-of-type {
+            bottom: 0;
+            left: 2%;
+        }
+    }
+
+    > div:nth-child(2) {
+        div.capacities_wrap {
+            border-top: 4px solid black;
+
+            h2 {
+                font-size: 1.5em;
+                margin:2% 0 0 3%;
+            }
+
+            > div.capacities {
+                display: flex;
+                flex-wrap: wrap;
+
+                > p {
+                    width: 50%;
+                    text-align: left;
+                    padding: 3% 1% 3% 4%;
+                    font-size: 20px;
+                    text-transform: capitalize;
+                    position: relative;
+
+                    &.current::before {
+                        font-family: "Font Awesome 5 Free";
+                        content: "\f0da";
+                        display: inline-block;
+                        font-weight: 900;
+                        margin-right: 2%;
+                        //display: none;
+                        position: absolute;
+                        left: 4%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .home-button {
+        position: relative;
+        margin: 4% 0;
+    }
+
+    .poke_wrap {
+        > div:first-child {
+            i:last-of-type {
+                right: auto;
+                left: 2%;
+            }
         }
     }
 }

@@ -7,6 +7,11 @@
                     <input type="text" name="input-search" placeholder="Search for a pokemon...">
                     <i class="fas fa-search"></i>
                 </div>
+                @php
+                if(isset($_GET["result"])){
+                echo '<p class="error-msg">Enter a valid pokemon name !</p>';
+                }
+                @endphp
             </section>
             <section>
                 <h2>All Pokémons</h2>
